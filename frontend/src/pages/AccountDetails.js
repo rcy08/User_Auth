@@ -19,7 +19,7 @@ const AccountDetails = () => {
           setError('');
           setUser('');
 
-          const response = await fetch('/account-details', {
+          const response = await fetch('https://user-auth-1mjc.onrender.com/account-details', {
             method: 'GET',
             headers: {
               'Content-Type' : 'application/json',
@@ -57,7 +57,7 @@ const AccountDetails = () => {
 
     const handleDelete = async () => {
 
-      const response  = await fetch('/account-details', {
+      const response  = await fetch('https://user-auth-1mjc.onrender.com/account-details', {
         method: 'DELETE',
         headers: { 'Content-Type' : 'application/json' },
         body: JSON.stringify({ email: user.email })
@@ -82,7 +82,7 @@ const AccountDetails = () => {
     }
 
     const getLogs = async () => {
-      const response = await fetch()
+      
     }
 
     return (

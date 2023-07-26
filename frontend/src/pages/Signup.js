@@ -20,7 +20,7 @@ const Signup = () => {
 		e.preventDefault();
 		
 		if (password === confirmpassword && password !== '') {
-			const response = await fetch('/signup', {
+			const response = await fetch('https://user-auth-1mjc.onrender.com/signup', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({ 

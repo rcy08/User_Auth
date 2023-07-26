@@ -16,7 +16,7 @@ const ResetPassword = () => {
 
         if (password === confirmpassword) {
 
-            const response = await fetch(`/reset-password/${token.resetToken}`, {
+            const response = await fetch(`https://user-auth-1mjc.onrender.com/reset-password/${token.resetToken}`, {
                 method: 'PUT',
                 headers: { 'Content-Type' : 'application/json' },
                 body: JSON.stringify({ password })

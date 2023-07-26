@@ -16,7 +16,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const response = await fetch('/login', {
+        const response = await fetch('https://user-auth-1mjc.onrender.com/login', {
             method: 'POST',
             headers: { 'Content-Type' : 'application/json' },
             body: JSON.stringify({ email, password })
@@ -69,7 +69,7 @@ const Login = () => {
     const name = userObject.name;
     const picture = userObject.picture;
 
-    await fetch('/google-accounts', {
+    await fetch('https://user-auth-1mjc.onrender.com/google-accounts', {
       method: 'POST',
       headers: { 'Content-Type' : 'application/json' },
       body: JSON.stringify({ email, name, picture })

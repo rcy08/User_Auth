@@ -11,7 +11,7 @@ const EmailVerification = () => {
 
         const Verify = async () => {
 
-            const response = await fetch(`/email-verification/${token}`, {
+            const response = await fetch(`https://user-auth-1mjc.onrender.com/email-verification/${token}`, {
                 method: 'GET'
             });
 

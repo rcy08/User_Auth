@@ -9,7 +9,7 @@ const ForgotPassword = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const response = await fetch('/forgot-password', {
+        const response = await fetch('https://user-auth-1mjc.onrender.com/forgot-password', {
             method: 'POST',
             headers: { 'Content-Type' : 'application/json' },
             body: JSON.stringify({ email })
