@@ -13,7 +13,7 @@ app.use(cors());
 
 app.use(
   cors({
-    origin: "https://user-auth-csv.netlify.app/",
+    origin: "https://user-auth-csv.netlify.app",
     credentials: true,
   })
 );
