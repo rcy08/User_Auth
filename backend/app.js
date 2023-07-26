@@ -29,7 +29,7 @@ mongoose.connect(process.env.MONGO_URI)
 app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://user-auth-csv.netlify.app/"
+    "https://user-auth-csv.netlify.app"
   );
   res.header(
     "Access-Control-Allow-Origin",
