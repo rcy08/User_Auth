@@ -543,6 +543,16 @@ footer {
     top: 10px;
 }
 
+.strength-password {
+    position: absolute;
+    width: 30%;
+    height: 5px;
+    bottom: 523px;
+    left: 860px;
+    background: transparent;
+    transition: all 300ms ease-in-out;
+}
+
 /* .Acc_info button {
     margin-top: 10px;
     width: 100px;

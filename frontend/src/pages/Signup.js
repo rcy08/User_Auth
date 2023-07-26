@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Icon } from 'react-icons-kit'
 import { eyeBlocked } from 'react-icons-kit/icomoon/eyeBlocked'
 import { eye } from 'react-icons-kit/icomoon/eye'
 import ReCAPTCHA from "react-google-recaptcha";
-
+const zxcvbn = require("zxcvbn")
+// import * as  zxcvbn  from "zxcvbn";
 
 const Signup = () => {
 
@@ -14,6 +15,18 @@ const Signup = () => {
 	const [errors, setErrors] = useState({});
 	const navigate = useNavigate();
     const [recaptchaResponse, setRecaptchaResponse] = useState('');
+
+	const [score, setScore] = useState("null");
+
+    const testStrengthPassword = () => {
+        // we will get score property from zxcvbn
+        if (password !== "") {
+            let pass = zxcvbn(password)
+            setScore(pass.score)
+        } else {
+            setScore("null")
+        }
+    }
 	
 
 	const handleSubmit = async (e) => {
@@ -75,6 +88,45 @@ const Signup = () => {
 		}
 	}
 
+	const p = document.querySelector('.strength-password');
+
+    useEffect(() => {
+        switch (score) {
+            case 0:
+                p.innerHTML = 'Very Weak';
+				p.style.color = 'red';
+				p.style.fontWeight = 'bold';
+                break;
+				
+			case 1:
+				p.innerHTML = 'Weak';
+				p.style.color = 'red';
+				p.style.fontWeight = 'bold';
+				break;
+					
+			case 2:
+				p.innerHTML = 'Moderate';
+				p.style.color = 'yellow';
+				p.style.fontWeight = 'bold';
+                break;
+				
+			case 3:
+				p.innerHTML = 'Strong';
+				p.style.color = 'green';
+				p.style.fontWeight = 'bold';
+                break;
+			
+			case 4:
+				p.innerHTML = 'Very Strong';
+				p.style.color = 'green';
+				p.style.fontWeight = 'bold';
+            break;
+
+            default:
+                break;
+        }
+    }, [score]);
+
 	return (
 		
 		<div className="container">
@@ -96,14 +148,19 @@ const Signup = () => {
 
 
 					<label className="label"> Password: </label>
-					<div className="input-field">
-						<input type={type} name="password" id="password" placeholder="Password"
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
-						/>
-						<span><Icon icon={icon} size={22} onClick={handleEye} /></span>
-					</div>
-					<div className="password-error"> {errors.password} </div>
+                    <div className="input-field">
+                        <input type={type} name="password" id="password" placeholder="Password"
+                            value={password}
+                            onChange={(e) => {
+                                setPassword(e.target.value)
+                                { testStrengthPassword(e.target.value) };
+                            }}
+                        // onChange={testStrengthPassword}
+                        />
+                        <span><Icon icon={icon} size={22} onClick={handleEye} /></span>
+                    </div>
+                    <div className="password-error"> {errors.password} </div>
+                    <p className='strength-password'></p>
 
 
 					<label className="label"> Confirm Password: </label>
