@@ -177,7 +177,7 @@ const forgotpassword = async (req, res) => {
 
         await user.save();
 
-        const resetUrl = `http://localhost:3000/reset-password/${resetToken}`;
+        const resetUrl = `https://user-auth-csv.netlify.app/reset-password/${resetToken}`;
 
         const message = `
           <h1> Hello, ${email} </h1>
