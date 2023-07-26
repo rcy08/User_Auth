@@ -75,7 +75,7 @@ const signup = async (req, res) => {
 
         await user.save();
 
-        const verificationUrl = `http://localhost:3000/email-verification/${verificationToken}`;
+        const verificationUrl = `https://user-auth-csv.netlify.app/email-verification/${verificationToken}`;
 
         const message = `
            <h1> Please go to this link to verify your Email </h1>
