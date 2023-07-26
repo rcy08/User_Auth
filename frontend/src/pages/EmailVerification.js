@@ -30,7 +30,7 @@ const EmailVerification = () => {
 
         Verify();
 
-    }, []);
+    }, [navigate, token]);
 
 
     return (
