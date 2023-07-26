@@ -82,7 +82,6 @@ const AccountDetails = () => {
     }
 
     const getLogs = async () => {
-      
     }
 
     return (

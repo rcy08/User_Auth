@@ -40,6 +40,7 @@ const ResetPassword = () => {
     }
 
     return (
+        
         <div className="container">
             <div className="reset-password">
                 <h3>Reset Password</h3>

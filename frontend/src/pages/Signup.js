@@ -76,6 +76,7 @@ const Signup = () => {
 	}
 
 	return (
+		
 		<div className="container">
 			<div className="signup-box">
 				<h1 className="h-primary"> Signup Form </h1>

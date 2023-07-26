@@ -34,6 +34,7 @@ const EmailVerification = () => {
 
 
     return (
+        
         <div className="container">
             <div className="box">
                 <div className={status[0]==='I' ? 'ver-email' : 'status_none'}>

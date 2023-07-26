@@ -25,6 +25,7 @@ const ForgotPassword = () => {
     }
 
     return (
+      
       <div className="container">
         <div className="forgot-password box">
           <form onSubmit={handleSubmit}> 
