@@ -1,0 +1,554 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* body {
+    font-family: 'Poppins', sans-serif;
+} */
+
+body::before {
+    background: url('../public/bg4.png') no-repeat center center/cover;
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    /* background: url('https://images.unsplash.com/photo-1615715035836-43483dfaa1fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover; */
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    opacity: 1.0;
+}
+
+/* https://img.freepik.com/free-vector/gradient-network-connection-background_23-2148865392.jpg?w=1060&t=st=1684751752~exp=1684752352~hmac=a4f47c8af4bcef32dc706390bdb991a2cd1aabda52f42b868d51c26b61df47ac */
+
+.container {
+    /* border: 2px solid red; */
+    height: 96vh;
+    width: 99.75vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container>h1:nth-child(1) {
+    color: white;
+    position: absolute;
+    right: 150px;
+    top: 10px;
+}
+
+.box {
+    /* border: 2px solid green; */
+    display: flex;
+    background-color:whitesmoke;
+    border-radius: 20px;
+}
+
+.home {
+    margin: 4px 10px;
+    padding: 4px 10px;
+}
+
+.head {
+    text-decoration: none;
+    color: black;
+}
+
+.login-box {
+    /* border: 2px solid green; */
+    background-color: white;
+    border-radius: 20px;
+    height: 560px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.login-box input {
+    display: block;
+    padding: 10px 10px;
+    /* margin: 20px 10px; */
+    height: 15px;
+    width: 225px;
+    /* border-radius: 12px;
+    border: 2px solid rgb(183, 183, 183); */
+    border: none;
+    background-color: transparent;
+}
+
+/* .login-box input:hover {
+    border: 2px solid black;
+} */
+
+.links {
+    margin: 5px 10px;
+    text-decoration: none;
+    color: blue;
+}
+
+.links:hover{
+    /* border-radius: 8px; */
+    color: rgb(0, 0, 0);
+}
+
+.btn-login {
+    /* background-color: initial; */
+    background-color: rgb(0, 104, 74);
+    /* background-image: linear-gradient(-180deg, rgb(0,104,74), #75a603); */
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px; */
+    color: #FFFFFF;
+    font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    white-space: nowrap;
+    z-index: 9;
+    /* transition: box-shadow .2s; */
+    display: block;
+    cursor: pointer;
+    padding: 7px 112px;
+    margin: 20px auto;
+    margin-bottom: 25px;
+    font-size: 20px;
+    border-radius: 8px;
+    /* background-color: rgb(47 80 206); */
+    border: none;
+    /* border: 2px solid #31ff79; */
+}
+
+.btn-login:hover {
+    /* background-color:rgb(8, 8, 45); */
+    /* box-shadow: 1px 1px 1px rgb(54, 54, 106); */
+    /* box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px; */
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 89, 63);
+    border-color: rgb(0, 89, 63);
+    box-shadow: rgb(192, 250, 230) 0px 0px 0px 3px;
+}
+.btn-logout {
+    /* background-color: initial; */
+    background-color: rgb(0, 104, 74);
+    /* background-image: linear-gradient(-180deg, rgb(0,104,74), #75a603); */
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px; */
+    color: #FFFFFF;
+    font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    white-space: nowrap;
+    z-index: 9;
+    /* transition: box-shadow .2s; */
+    display: block;
+    cursor: pointer;
+    padding: 7px 50px;
+    margin: 100px auto;
+    margin-bottom: 25px;
+    font-size: 20px;
+    border-radius: 8px;
+    /* background-color: rgb(47 80 206); */
+    border: none;
+    /* border: 2px solid #31ff79; */
+}
+
+.btn-logout:hover {
+    /* background-color:rgb(8, 8, 45); */
+    /* box-shadow: 1px 1px 1px rgb(54, 54, 106); */
+    /* box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px; */
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 89, 63);
+    border-color: rgb(0, 89, 63);
+    box-shadow: rgb(192, 250, 230) 0px 0px 0px 3px;
+}
+.btn-delete {
+    /* background-color: initial; */
+    background-color: crimson;
+    /* background-image: linear-gradient(-180deg, rgb(0,104,74), #75a603); */
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px; */
+    color: #FFFFFF;
+    font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    white-space: nowrap;
+    z-index: 9;
+    /* transition: box-shadow .2s; */
+    display: block;
+    cursor: pointer;
+    padding: 7px 15px;
+    margin: 20px auto;
+    margin-bottom: 25px;
+    font-size: 20px;
+    border-radius: 8px;
+    /* background-color: rgb(47 80 206); */
+    border: none;
+    /* border: 2px solid #31ff79; */
+}
+
+.btn-delete:hover {
+    /* background-color:rgb(8, 8, 45); */
+    /* box-shadow: 1px 1px 1px rgb(54, 54, 106); */
+    /* box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px; */
+    color: rgb(255, 255, 255);
+    background-color: rgb(200, 19, 55);
+    border-color: rgb(0, 89, 63);
+    box-shadow: rgb(192, 250, 230) 0px 0px 0px 3px;
+}
+
+.btn-signup {
+    /* background-color: initial; */
+    /* background-image: linear-gradient(-180deg, #FF7E31, #E62C03); */
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px; */
+    background-color: rgb(0, 104, 74);
+    color: #FFFFFF;
+    font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    white-space: nowrap;
+    z-index: 9;
+    /* transition: box-shadow .2s; */
+
+    display: block;
+    cursor: pointer;
+    padding: 7px 106px;
+    margin: 20px auto;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    /* background-color: rgb(47 80 206); */
+    font-size: 20px;
+    border: none;
+    /* border: 2px solid rgb(255, 132, 0); */
+}
+
+.btn-signup:hover {
+    /* background-color: rgb(8, 8, 45);
+    box-shadow: 1px 1px 1px rgb(54, 54, 106); */
+    /* box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px; */
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 89, 63);
+    border-color: rgb(0, 89, 63);
+    box-shadow: rgb(192, 250, 230) 0px 0px 0px 3px;
+}
+
+.btn-delete {
+    /* background-color: initial; */
+    background-color: crimson;
+    /* background-image: linear-gradient(-180deg, rgb(0,104,74), #75a603); */
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px; */
+    color: #FFFFFF;
+    font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    white-space: nowrap;
+    z-index: 9;
+    /* transition: box-shadow .2s; */
+    display: block;
+    cursor: pointer;
+    padding: 7px 15px;
+    margin: 20px auto;
+    margin-bottom: 25px;
+    font-size: 20px;
+    border-radius: 8px;
+    /* background-color: rgb(47 80 206); */
+    border: none;
+    /* border: 2px solid #31ff79; */
+}
+
+.btn-delete:hover {
+    /* background-color:rgb(8, 8, 45); */
+    /* box-shadow: 1px 1px 1px rgb(54, 54, 106); */
+    /* box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px; */
+    color: rgb(255, 255, 255);
+    background-color: rgb(200, 19, 55);
+    border-color: rgb(0, 89, 63);
+    box-shadow: rgb(192, 250, 230) 0px 0px 0px 3px;
+}
+
+.btn-logout {
+    /* background-color: initial; */
+    background-color: rgb(0, 104, 74);
+    /* background-image: linear-gradient(-180deg, rgb(0,104,74), #75a603); */
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px; */
+    color: #FFFFFF;
+    font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    white-space: nowrap;
+    z-index: 9;
+    /* transition: box-shadow .2s; */
+    display: block;
+    cursor: pointer;
+    padding: 7px 50px;
+    margin: 100px auto;
+    margin-bottom: 25px;
+    font-size: 20px;
+    border-radius: 8px;
+    /* background-color: rgb(47 80 206); */
+    border: none;
+    /* border: 2px solid #31ff79; */
+}
+
+.btn-logout:hover {
+    /* background-color:rgb(8, 8, 45); */
+    /* box-shadow: 1px 1px 1px rgb(54, 54, 106); */
+    /* box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px; */
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 89, 63);
+    border-color: rgb(0, 89, 63);
+    box-shadow: rgb(192, 250, 230) 0px 0px 0px 3px;
+}
+
+.btn:hover {
+    border: 2px solid black;
+}
+
+.text {
+    margin-top: 15px;
+    margin-bottom: 18px;
+}
+
+.signup-box {
+    background-color: white;
+    border-radius: 20px;
+    height: 650px;
+    width: 370px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.signup-box input {
+    display: block;
+    padding: 10px 10px;
+    height: 15px;
+    width: 250px;
+    /* border-radius: 12px; */
+    /* border: 2px solid rgb(183, 183, 183); */
+    border: none;
+    background-color: transparent;
+
+}
+
+input:focus {
+    outline: none;
+}
+
+/* .signup-box input:hover{
+    border: 2px solid black;
+} */
+
+.input-field {
+    display: flex;
+    border: 2px solid gray;
+    border-radius: 10px;
+    margin: 15px 0px;
+}
+
+.input-field:hover{
+    border: 2px solid black;
+}
+
+.input-field span {
+    cursor: pointer;
+}
+
+.ver-email {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    width: 550px;
+    padding: 20px;
+}
+
+.ver-links {
+    margin: 5px 10px;
+    text-decoration: none;
+    color: blue;
+    font-size:23px;
+    font-weight: 500;
+}
+/* .status_error{
+    color: red;
+} */
+.status_none{
+    display: none;
+}
+.ver-links:hover{
+   color:black;
+}
+.label {
+    font-size: 15px;
+    font-weight: bold;
+    /* margin: 0px 12px; */
+}
+
+/* .error{
+    border: 1px solid red;
+} */
+
+.email-error {
+    font-size: 13px;
+    color: red;
+    text-align: center;
+}
+
+.password-error {
+    font-size: 13px;
+    color: red;
+    text-align: center;
+}
+
+.confirmpassword-error {
+    font-size: 13px;
+    color: red;
+    text-align: center;
+}
+
+.forgot-password {
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.forgot-password input {
+    height: 30px;
+    width: 256px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    margin: 2px 2px;
+    padding: 2px 2px;
+    border: 2px solid rgb(183, 183, 183);
+}
+
+.forgot-password input:hover {
+    border: 2px solid black;
+}
+
+.reset-password {
+    background-color: rgb(255, 255, 255);
+    padding: 15px 15px;
+    height: 300px;
+    width: 437px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.reset-password input {
+
+    height: 30px;
+    width: 256px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+
+    margin-bottom: 8px;
+    padding: 2px 2px;
+    border: 2px solid rgb(183, 183, 183);
+}
+
+.reset-password .enter {
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
+.confirm {
+
+    background-color: rgb(255, 255, 255);
+}
+
+.confirm input {
+    margin-top: 10px;
+    margin-right: 0%;
+    margin-bottom: 30px;
+}
+
+.reset-password .enter input {
+    margin-top: 30px;
+    margin-left: 18px;
+}
+
+.reset-password input:hover {
+
+    border: 2px solid black;
+}
+
+footer {
+    color: black;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.h-primary {
+    text-align: center;
+    color: black;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.Acc_info {
+    text-align: center;
+    height: 400px;
+    width: 600px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: white; */
+    /* opacity: 0.5; */
+    color: white;
+}
+#hello{ 
+    position: absolute;
+    right: 150px;
+    top: 10px;
+}
+
+/* .Acc_info button {
+    margin-top: 10px;
+    width: 100px;
+    background-color: rgb(185, 30, 30);
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 40px;
+} */
