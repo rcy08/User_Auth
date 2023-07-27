@@ -433,6 +433,7 @@ input:focus {
     font-size: 13px;
     color: red;
     text-align: center;
+    width: 283px;
 }
 
 .confirmpassword-error {
