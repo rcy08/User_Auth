@@ -18,8 +18,6 @@
 
 ### `Contributors:`
 
-Chinmay
-
-Saral
-
-Vansh
+- [Chinmay](https://github.com/saral11)
+- [Saral Shikhar](https://github.com/saral11)
+- [Vansh Kathnawal](https://github.com/vk0942)
