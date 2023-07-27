@@ -22,6 +22,10 @@ const handleError = (err) => {
         errors.email = err.message;
         return errors;
     }
+    if(err.message === 'You are registered with us but not this way. Try another way of signing in.') {
+        errors.password = err.message;
+        return errors;
+    }
 
     if(err.message === 'Incorrect Password') {
         errors.password = err.message;

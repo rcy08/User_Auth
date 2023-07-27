@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const { isEmail } = require('validator');
 const Schema = mongoose.Schema;
+const googleUser = require('../models/googleUser')
 
 const userSchema = new Schema({
     email: {
@@ -53,7 +54,7 @@ userSchema.statics.login = async function (email, password) {
     if (user) {
         if (!user.isVerified) {
           throw Error(
-            'Please verify your email first using the link sent on your email'
+            'Please verify your email first'
           );
         }
         const auth = await bcrypt.compare(password, user.password);
@@ -65,7 +66,9 @@ userSchema.statics.login = async function (email, password) {
         }
     }
     else {
-        throw Error('Email not registered');
+        const gUser = await googleUser.findOne({email});
+        if(gUser) throw Error('You are registered with us but not this way. Try another way of signing in.');
+        else throw Error('Email not registered');
     }
 }
 
