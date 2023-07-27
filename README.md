@@ -2,6 +2,12 @@
 
 ## Getting Started With The Project
 
+### Deployment
+
+- [User Auth Microservice](user-auth-csv.netlify.app)
+
+### Running In Your Local Machine
+
 * First download the zip folder and extract it.
 
 * Then create a .env file in backend and add all the enviornment variables mentioned in the project.
