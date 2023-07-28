@@ -93,9 +93,9 @@ const AccountDetails = () => {
               <h1> Hello, {user.name} </h1>
               <h2> Your email: {user.email} </h2>
               <img src={user.picture} alt="Your Profile Picture" height='50px' width='50px'  />
-              { user.logs.forEach(element => {
+              {/* { user.logs.length > 0 && user.logs.forEach(element => {
                 <h2> element </h2>
-              }) }
+              }) } */}
               <button onClick={handleLogout} className="btn-logout"> Logout </button>
               <button onClick={handleDelete} className='btn-delete'> Delete Account </button>
             </div>
