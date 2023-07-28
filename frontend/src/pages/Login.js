@@ -55,15 +55,7 @@ const Login = () => {
     
     /* global google */
 
-    // console.log(response);
-
-    // console.log('Encoded JWT ID token: ' + response.credential);
-
     var userObject = jwt_decode(response.credential);
-
-    console.log(userObject);
-
-    console.log(userObject.email);
 
     const email = userObject.email;
     const name = userObject.name;

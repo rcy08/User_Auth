@@ -34,7 +34,7 @@ const AccountDetails = () => {
           }
   
           if (data.success) {
-            setUser(data);
+            setUser(data.user);
           }
 
         }
@@ -92,10 +92,12 @@ const AccountDetails = () => {
             <div className="Acc_info">
               <h1> Hello, {user.name} </h1>
               <h2> Your email: {user.email} </h2>
-              <img src={user.picture} alt="" height='50px' width='50px'  />
-              {/* <img src={user.picture} alt="" /> */}
-              <button onClick={handleDelete} className='btn-delete'> Delete Account </button>
+              <img src={user.picture} alt="Your Profile Picture" height='50px' width='50px'  />
+              { user.logs.forEach(element => {
+                <h2> element </h2>
+              }) }
               <button onClick={handleLogout} className="btn-logout"> Logout </button>
+              <button onClick={handleDelete} className='btn-delete'> Delete Account </button>
             </div>
           )}
 

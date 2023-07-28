@@ -24,6 +24,10 @@ const auth = async (req, res, next) => {
             return res.status(404).json({ error: 'No user found with this id' });
         }
 
+        if(Date.now() > user.userTokenExpire) {
+            return res.status(404).json({ error: 'Authentication Expired. Please Sign In again.' });
+        }
+
         req.user = user;
 
         next();
