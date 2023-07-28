@@ -6,6 +6,12 @@ const Schema = mongoose.Schema;
 const googleUser = require('../models/googleUser')
 
 const userSchema = new Schema({
+    name: {
+        type: String,
+        required: [true, 'Please enter a Username'],
+        unique: true,
+        minlength: [4, 'Minimum length of Username is 4 characters']
+    },
     email: {
         type: String,
         required: [true, 'Please enter an Email'],

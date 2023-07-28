@@ -9,6 +9,7 @@ const zxcvbn = require("zxcvbn")
 
 const Signup = () => {
 
+	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [confirmpassword, setConfirmpassword] = useState('');
@@ -32,11 +33,12 @@ const Signup = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		
-		if (password === confirmpassword && password !== '') {
+		if (password === confirmpassword && password.length >= 6 && name.length >= 4) {
 			const response = await fetch('https://user-auth-fyxk.onrender.com/signup', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({ 
+					name,
                     email, 
                     password,
                     recaptchaResponse,
@@ -61,10 +63,14 @@ const Signup = () => {
 
 		}
 		else {
-			if (password.length < 6) {
+			if (name.length < 4) {
+				setErrors({
+					username: 'Minimum length of password is 4 characters',
+				});
+			}
+			else if (password.length < 6) {
 				setErrors({
 					password: 'Minimum length of password is 6 characters',
-					confirmpassword: `Passwords don't match`,
 				});
 			}
 			else {
@@ -135,6 +141,16 @@ const Signup = () => {
 
 				<form onSubmit={handleSubmit}>
 
+
+					<label className="label"> Username: </label>
+					<div className="input-field">
+						<input type="text" name="name" id="name" placeholder="Username"
+							value={name}
+							onChange={(e) => setName(e.target.value)}
+						/>
+					</div>
+					<div className="username-error"> {errors.username} </div>
+
 					<label className="label"> Email: </label>
 					<div className="input-field">
 						<input type="email" name="email" id="email" placeholder="Email"
@@ -185,7 +201,7 @@ const Signup = () => {
 
 				</form>
 
-				<h4 className="text"> Already have an account? <Link to='/login' className='links'> Login </Link> </h4>
+				<h4 className="text"> Already have an account? <Link to='/login' className='links'> Sign In </Link> </h4>
 				<h4> <Link to='/' className='links'> Home </Link> </h4>
 
 			</div>

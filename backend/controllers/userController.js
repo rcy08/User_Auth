@@ -33,7 +33,7 @@ const handleError = (err) => {
     }
     
     if(err.code === 11000) {
-        errors.email = 'Email already registered';
+        errors.email = 'Email/Username already registered';
         return errors;
     }
 
@@ -50,12 +50,19 @@ const createToken = (id) => {
 }
 
 const signup = async (req, res) => {
-    const { email, password, recaptchaResponse } = req.body;
+    const { name, email, password, recaptchaResponse } = req.body;
 
     try {
+
+        const usernameAlreadyExists = await User.findOne({ name });
+
+        if(usernameAlreadyExists) {
+            return res.status(500).json({ errors: {
+                username: 'Username already exists'
+            }});
+        }
+
         const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-        // console.log(secretKey);
-        // console.log(recaptchaResponse);
 
         const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
           method: 'POST',
@@ -65,15 +72,13 @@ const signup = async (req, res) => {
 
         const captchaData = await response.json();
 
-        console.log(captchaData);
-
         if(!captchaData.success){
             return res.status(500).json({ errors: {
                 captcha: 'captcha verification failed'
             } });
         }
 
-        const user = await User.create({ email, password });
+        const user = await User.create({ name, email, password });
 
         const verificationToken = user.getEmailVerificationToken();
 
