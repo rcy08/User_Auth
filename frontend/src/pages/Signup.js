@@ -65,7 +65,7 @@ const Signup = () => {
 		else {
 			if (name.length < 4) {
 				setErrors({
-					username: 'Minimum length of password is 4 characters',
+					username: 'Minimum length of Username is 4 characters',
 				});
 			}
 			else if (password.length < 6) {

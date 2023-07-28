@@ -55,24 +55,40 @@ userSchema.statics.login = async function (email, password) {
         throw Error('Please fill all fields');
     }
 
-    const user = await this.findOne({ email });
+    const userByName = await this.findOne({ name: email });
 
-    if (user) {
-        if (!user.isVerified) {
+    const userByEmail = await this.findOne({ email });
+
+    if (userByEmail) {
+        if (!userByEmail.isVerified) {
           throw Error(
             'Please verify your email first'
           );
         }
-        const auth = await bcrypt.compare(password, user.password);
+        const auth = await bcrypt.compare(password, userByEmail.password);
         if (auth) {
-            return user;
+            return userByEmail;
+        }
+        else {
+            throw Error('Incorrect Password');
+        }
+    }
+    else if(userByName) {
+        if (!userByName.isVerified) {
+          throw Error(
+            'Please verify your email first'
+          );
+        }
+        const auth = await bcrypt.compare(password, userByName.password);
+        if (auth) {
+            return userByName;
         }
         else {
             throw Error('Incorrect Password');
         }
     }
     else {
-        const gUser = await googleUser.findOne({email});
+        const gUser = await googleUser.findOne({ email });
         if(gUser) throw Error('You are registered with us but not this way. Try another way of signing in.');
         else throw Error('Email not registered');
     }

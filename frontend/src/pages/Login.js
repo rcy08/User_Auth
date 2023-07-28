@@ -14,28 +14,28 @@ const Login = () => {
 
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+      e.preventDefault();
 
-        const response = await fetch('https://user-auth-fyxk.onrender.com/login', {
-            method: 'POST',
-            headers: { 'Content-Type' : 'application/json' },
-            body: JSON.stringify({ email, password })
-        });
+      const response = await fetch('https://user-auth-fyxk.onrender.com/login', {
+          method: 'POST',
+          headers: { 'Content-Type' : 'application/json' },
+          body: JSON.stringify({ email, password })
+      });
 
-        const data = await response.json();
+      const data = await response.json();
 
-        if (data.errors) {
-          setErrors(data.errors);
-        }
-        if (data.user) {
-          setEmail('');
-          setPassword('');
-          setErrors({});
-          console.log(data.user);
+      if (data.errors) {
+        setErrors(data.errors);
+      }
+      if (data.user) {
+        setEmail('');
+        setPassword('');
+        setErrors({});
+        console.log(data.user);
 
-          localStorage.setItem(`userToken`, `Bearer ${data.token}`);
-          navigate('/');
-        }
+        localStorage.setItem(`userToken`, `Bearer ${data.token}`);
+        navigate('/');
+      }
     }
 
   const [type, setType] = useState('password');
@@ -100,9 +100,9 @@ const Login = () => {
           <h1 className="h-primary"> Sign In Form </h1>
           <form onSubmit={handleSubmit}>
 
-            <label className="label"> Email: </label>
+            <label className="label"> Email or Username: </label>
             <div className="input-field">
-            <input type="email" name="email" id="email" placeholder="Email"
+            <input type="text" name="email" id="email" placeholder="Email or Username"
               value = {email}
               onChange={(e) => setEmail(e.target.value)}
             />

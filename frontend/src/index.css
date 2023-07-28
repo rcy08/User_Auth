@@ -344,7 +344,7 @@ body::before {
 .signup-box {
     background-color: white;
     border-radius: 20px;
-    height: 650px;
+    height: 730px;
     width: 370px;
     display: flex;
     flex-direction: column;
@@ -423,10 +423,18 @@ input:focus {
     border: 1px solid red;
 } */
 
+.username-error {
+    font-size: 13px;
+    color: red;
+    text-align: center;
+    width: 283px;
+}
+
 .email-error {
     font-size: 13px;
     color: red;
     text-align: center;
+    width: 283px;
 }
 
 .password-error {
@@ -440,6 +448,7 @@ input:focus {
     font-size: 13px;
     color: red;
     text-align: center;
+    width: 283px;
 }
 
 .forgot-password {
@@ -548,8 +557,8 @@ footer {
     position: absolute;
     width: 30%;
     height: 5px;
-    bottom: 523px;
-    left: 860px;
+    bottom: 450px;
+    left: 869px;
     background: transparent;
     transition: all 300ms ease-in-out;
 }

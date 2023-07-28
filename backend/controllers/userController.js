@@ -8,7 +8,7 @@ const handleError = (err) => {
     console.log(err.message, err.code);
     let errors = { email: '', password: '' };
 
-    if(err.message === 'Please verify your email first using the link sent on your email') {
+    if(err.message === 'Please verify your email first') {
         errors.password = err.message;
         return errors;
     }
