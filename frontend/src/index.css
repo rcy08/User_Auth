@@ -10,9 +10,16 @@
 /* body {
     font-family: 'Poppins', sans-serif;
 } */
+#root > div > div.signup-box > div > h4.text{
+    margin-top: 15px;
+}
+#root > div > div.login-box > div > h4{
+    margin-top: 25px;
+}
 
 body::before {
-    background: url('../public/bg4.png') no-repeat center center/cover;
+    /* background: url('../public/bg4.png') no-repeat center center/cover; */
+    background-color: #1a6a68;
     content: "";
     position: absolute;
     top: 0px;
@@ -64,7 +71,7 @@ body::before {
     /* border: 2px solid green; */
     background-color: white;
     border-radius: 20px;
-    height: 560px;
+    height: 545px;
     width: 350px;
     display: flex;
     flex-direction: column;
@@ -105,7 +112,6 @@ body::before {
     /* background-image: linear-gradient(-180deg, rgb(0,104,74), #75a603); */
     /* box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px; */
     color: #FFFFFF;
-    font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
     overflow: hidden;
     pointer-events: auto;
     position: relative;
@@ -342,9 +348,10 @@ body::before {
 }
 
 .signup-box {
+    margin-top: 10px;
     background-color: white;
     border-radius: 20px;
-    height: 730px;
+    height: 715px;
     width: 370px;
     display: flex;
     flex-direction: column;
@@ -375,7 +382,7 @@ input:focus {
 .input-field {
     display: flex;
     border: 2px solid gray;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 15px 0px;
 }
 
@@ -385,6 +392,7 @@ input:focus {
 
 .input-field span {
     cursor: pointer;
+    margin: auto;
 }
 
 .ver-email {
