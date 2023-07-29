@@ -10,12 +10,6 @@
 /* body {
     font-family: 'Poppins', sans-serif;
 } */
-#root > div > div.signup-box > div > h4.text{
-    margin-top: 15px;
-}
-#root > div > div.login-box > div > h4{
-    margin-top: 25px;
-}
 
 body::before {
     /* background: url('../public/bg4.png') no-repeat center center/cover; */
@@ -583,3 +577,10 @@ footer {
     font-size: 20px;
     border-radius: 40px;
 } */
+
+#root > div > div > div.signup-box > h4.text{
+    margin-top: 15px;
+}
+#root > div > div > div.login-box > h4{
+    margin-top: 25px;
+}
