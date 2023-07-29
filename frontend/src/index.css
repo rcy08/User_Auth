@@ -583,4 +583,5 @@ footer {
 }
 #root > div > div > div.login-box > h4{
     margin-top: 25px;
+    margin-bottom: 0px;
 }
