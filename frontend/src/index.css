@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Quicksand&display=swap');
 
 * {
     margin: 0px;
     padding: 0px;
-    font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 /* body {

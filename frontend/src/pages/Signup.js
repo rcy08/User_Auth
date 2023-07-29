@@ -16,8 +16,7 @@ const Signup = () => {
 	const [errors, setErrors] = useState({});
 	const navigate = useNavigate();
     const [recaptchaResponse, setRecaptchaResponse] = useState('');
-
-	const [score, setScore] = useState("null");
+    const [score, setScore] = useState("null");
 
     const testStrengthPassword = () => {
         // we will get score property from zxcvbn
@@ -28,7 +27,6 @@ const Signup = () => {
             setScore("null")
         }
     }
-	
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
