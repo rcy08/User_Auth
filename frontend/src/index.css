@@ -559,11 +559,8 @@ footer {
 }
 
 .strength-password {
-    position: absolute;
-    width: 30%;
+    width: 100%;
     height: 5px;
-    bottom: 450px;
-    left: 869px;
     background: transparent;
     transition: all 300ms ease-in-out;
 }
@@ -584,4 +581,7 @@ footer {
 #root > div > div > div.login-box > h4{
     margin-top: 25px;
     margin-bottom: 0px;
+}
+#root > div > div > div > form > div:nth-child(8){
+    margin-bottom: 8px;
 }

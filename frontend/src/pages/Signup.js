@@ -95,15 +95,16 @@ const Signup = () => {
 	const p = document.querySelector('.strength-password');
 
     useEffect(() => {
+        p.innerHTML = 'Password Strength: ';
         switch (score) {
             case 0:
-                p.innerHTML = 'Very Weak';
+                p.innerHTML += 'Very Weak';
 				p.style.color = 'red';
 				p.style.fontWeight = 'bold';
                 break;
 				
 			case 1:
-				p.innerHTML = 'Weak';
+				p.innerHTML += 'Weak';
 				p.style.color = 'red';
 				p.style.fontWeight = 'bold';
 				break;
@@ -115,13 +116,13 @@ const Signup = () => {
                 break;
 				
 			case 3:
-				p.innerHTML = 'Strong';
+				p.innerHTML += 'Strong';
 				p.style.color = 'green';
 				p.style.fontWeight = 'bold';
                 break;
 			
 			case 4:
-				p.innerHTML = 'Very Strong';
+				p.innerHTML += 'Very Strong';
 				p.style.color = 'green';
 				p.style.fontWeight = 'bold';
             break;
@@ -139,7 +140,6 @@ const Signup = () => {
 
 				<form onSubmit={handleSubmit}>
 
-
 					<label className="label"> Username: </label>
 					<div className="input-field">
 						<input type="text" name="name" id="name" placeholder="Username"
@@ -156,10 +156,7 @@ const Signup = () => {
 							onChange={(e) => setEmail(e.target.value)}
 						/>
 					</div>
-					{/* <p> {email} </p> */}
-
-					<div className="email-error"> {errors.email} </div>
-
+                    <div className="email-error"> {errors.email} </div>
 
 					<label className="label"> Password: </label>
                     <div className="input-field">
@@ -169,7 +166,6 @@ const Signup = () => {
                                 setPassword(e.target.value)
                                 { testStrengthPassword(e.target.value) };
                             }}
-                        // onChange={testStrengthPassword}
                         />
                         <span><Icon icon={icon} size={22} onClick={handleEye} /></span>
                     </div>
