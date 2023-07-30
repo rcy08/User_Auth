@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Icon } from 'react-icons-kit'
 import { eyeBlocked } from 'react-icons-kit/icomoon/eyeBlocked'
 import { eye } from 'react-icons-kit/icomoon/eye'
-import ReCAPTCHA from "react-google-recaptcha";
+import { ReCAPTCHA, grecaptcha } from "react-google-recaptcha";
 const zxcvbn = require("zxcvbn")
 // import * as  zxcvbn  from "zxcvbn";
 
@@ -31,7 +31,7 @@ const Signup = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-        ReCAPTCHA.reset();
+        grecaptcha.reset();
 		
 		if (password === confirmpassword && password.length >= 6 && name.length >= 4 && score >= 2) {
 			const response = await fetch('https://user-auth-fyxk.onrender.com/signup', {
