@@ -194,8 +194,7 @@ body::before {
     display: block;
     cursor: pointer;
     padding: 7px 15px;
-    margin: 25px auto;
-    margin-bottom: 25px;
+    margin: 0px auto 25px;
     font-size: 20px;
     border-radius: 8px;
     /* background-color: rgb(47 80 206); */
@@ -312,8 +311,8 @@ body::before {
     display: block;
     cursor: pointer;
     padding: 7px 50px;
-    margin: 100px auto;
-    margin-bottom: 25px;
+    /* margin: 100px auto;
+    margin-bottom: 25px; */
     font-size: 20px;
     border-radius: 8px;
     /* background-color: rgb(47 80 206); */
@@ -541,7 +540,7 @@ footer {
     color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 400px;
     margin: 100px auto;
