@@ -95,16 +95,16 @@ const Signup = () => {
 	const p = document.querySelector('.strength-password');
 
     useEffect(() => {
-        p.innerHTML = 'Password Strength: ';
+        // p.innerHTML = 'Password Strength: ';
         switch (score) {
             case 0:
-                p.innerHTML += 'Very Weak';
+                p.innerHTML = 'Password Strength: Very Weak';
 				p.style.color = 'red';
 				p.style.fontWeight = 'bold';
                 break;
 				
 			case 1:
-				p.innerHTML += 'Weak';
+				p.innerHTML = 'Password Strength: Weak';
 				p.style.color = 'red';
 				p.style.fontWeight = 'bold';
 				break;
@@ -116,13 +116,13 @@ const Signup = () => {
                 break;
 				
 			case 3:
-				p.innerHTML += 'Strong';
+				p.innerHTML = 'Password Strength: Strong';
 				p.style.color = 'green';
 				p.style.fontWeight = 'bold';
                 break;
 			
 			case 4:
-				p.innerHTML += 'Very Strong';
+				p.innerHTML = 'Password Strength: Very Strong';
 				p.style.color = 'green';
 				p.style.fontWeight = 'bold';
             break;
