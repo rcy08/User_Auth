@@ -121,7 +121,7 @@ body::before {
     margin: 20px auto;
     margin-bottom: 25px;
     font-size: 20px;
-    border-radius: 8px;
+    border-radius: 5px;
     /* background-color: rgb(47 80 206); */
     border: none;
     /* border: 2px solid #31ff79; */
@@ -235,10 +235,11 @@ body::before {
     margin: 20px auto 10px;
     /* margin-top: 30px;
     margin-bottom: 10px; */
-    border-radius: 12px;
+    border-radius: 5px;
     /* background-color: rgb(47 80 206); */
     font-size: 20px;
     border: none;
+    width: 100%;
     /* border: 2px solid rgb(255, 132, 0); */
 }
 

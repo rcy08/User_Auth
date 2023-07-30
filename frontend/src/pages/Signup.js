@@ -30,6 +30,8 @@ const Signup = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+
+        ReCAPTCHA.reset();
 		
 		if (password === confirmpassword && password.length >= 6 && name.length >= 4 && score >= 2) {
 			const response = await fetch('https://user-auth-fyxk.onrender.com/signup', {
