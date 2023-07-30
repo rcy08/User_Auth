@@ -25,23 +25,22 @@ const ForgotPassword = () => {
     }
 
     return (
-      
-      <div className="container">
-        <div className="forgot-password box">
-          <form onSubmit={handleSubmit}> 
-            <label className="label"> Enter your Email: </label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <button className='btn-login'> Submit </button>
-          </form>
-          <h2> {status} </h2>
-          <h2> <Link to='/' className='links'> Home </Link> </h2>
+        <div className="container">
+            <div className="forgot-password box">
+                <form id='forget-password' onSubmit={handleSubmit}>
+                    <label className="label"> Enter your Email: </label>
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <button className='btn-login'> Submit </button>
+                </form>
+                <h4> {status} </h4>
+                <h4> <Link to='/' className='links'> Home </Link> </h4>
+            </div>
         </div>
-      </div>
     );
 }
- 
+
 export default ForgotPassword;

@@ -456,6 +456,11 @@ input:focus {
     width: 283px;
 }
 
+#forget-password{
+    display: flex;
+    flex-direction: column;
+}
+
 .forgot-password {
     padding: 15px 15px;
     display: flex;
@@ -466,10 +471,9 @@ input:focus {
 
 .forgot-password input {
     height: 30px;
-    width: 256px;
     border-radius: 12px;
     font-size: 1.1rem;
-    margin: 2px 2px;
+    margin: 15px 2px;
     padding: 2px 2px;
     border: 2px solid rgb(183, 183, 183);
 }
