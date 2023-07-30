@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Quicksand:wght@700&display=swap');
 
 * {
@@ -558,13 +557,15 @@ footer {
     top: 10px;
 }
 
+#strength-password-div{
+    display: flex;
+}
+
 .strength-password {
-    width: 100%;
-    height: 5px;
+    /* width: 70%; */
     background: transparent;
     transition: all 300ms ease-in-out;
     font-size: small;
-    margin-bottom: 15px;
 }
 
 /* .Acc_info button {

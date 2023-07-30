@@ -31,7 +31,7 @@ const Signup = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		
-		if (password === confirmpassword && password.length >= 6 && name.length >= 4) {
+		if (password === confirmpassword && password.length >= 6 && name.length >= 4 && score >= 2) {
 			const response = await fetch('https://user-auth-fyxk.onrender.com/signup', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
@@ -71,6 +71,11 @@ const Signup = () => {
 					password: 'Minimum length of password is 6 characters',
 				});
 			}
+            else if(score < 2){
+                setErrors({
+					password: 'Weak password',
+				});
+            }
 			else {
 				setErrors({
 					confirmpassword: `Passwords don't match`,
@@ -98,31 +103,31 @@ const Signup = () => {
         // p.innerHTML = 'Password Strength: ';
         switch (score) {
             case 0:
-                p.innerHTML = 'Password Strength: Very Weak';
+                p.innerHTML = 'Strength: Very Weak';
 				p.style.color = 'red';
 				p.style.fontWeight = 'bold';
                 break;
 				
 			case 1:
-				p.innerHTML = 'Password Strength: Weak';
+				p.innerHTML = 'Strength: Weak';
 				p.style.color = 'red';
 				p.style.fontWeight = 'bold';
 				break;
 					
 			case 2:
-				p.innerHTML = 'Moderate';
+				p.innerHTML = 'Strength: Moderate';
 				p.style.color = 'yellow';
 				p.style.fontWeight = 'bold';
                 break;
 				
 			case 3:
-				p.innerHTML = 'Password Strength: Strong';
+				p.innerHTML = 'Strength: Strong';
 				p.style.color = 'green';
 				p.style.fontWeight = 'bold';
                 break;
 			
 			case 4:
-				p.innerHTML = 'Password Strength: Very Strong';
+				p.innerHTML = 'Strength: Very Strong';
 				p.style.color = 'green';
 				p.style.fontWeight = 'bold';
             break;
@@ -158,7 +163,10 @@ const Signup = () => {
 					</div>
                     <div className="email-error"> {errors.email} </div>
 
-					<label className="label"> Password: </label>
+                    <div id='strength-password-div'>
+                        <label className="label"> Password: </label>
+                        <p className='strength-password'></p>
+                    </div>
                     <div className="input-field">
                         <input type={type} name="password" id="password" placeholder="Password"
                             value={password}
@@ -170,7 +178,7 @@ const Signup = () => {
                         <span><Icon icon={icon} size={22} onClick={handleEye} /></span>
                     </div>
                     <div className="password-error"> {errors.password} </div>
-                    <p className='strength-password'></p>
+                    
 
 
 					<label className="label"> Confirm Password: </label>
