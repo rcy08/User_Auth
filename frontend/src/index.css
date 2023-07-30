@@ -233,9 +233,9 @@ body::before {
     display: block;
     cursor: pointer;
     padding: 7px 106px;
-    margin: 20px auto;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    margin: 20px auto 10px;
+    /* margin-top: 30px;
+    margin-bottom: 10px; */
     border-radius: 12px;
     /* background-color: rgb(47 80 206); */
     font-size: 20px;

@@ -19,7 +19,7 @@ const Home = () => {
 
           { !isLogin && <div>
             <h1 className="home"> <Link to="/login" className='links'> SignIn </Link> </h1>
-            <h1 className="home"> <Link to="/signup" className='links'> Signup </Link> </h1>
+            <h1 className="home"> <Link to="/signup" className='links'> SignUp </Link> </h1>
           </div> }
           
         </div>

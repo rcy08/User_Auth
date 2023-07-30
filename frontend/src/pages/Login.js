@@ -89,7 +89,7 @@ const Login = () => {
 
       <div className="container">
         <div className="login-box">
-          <h1 className="h-primary"> Sign In Form </h1>
+          <h1 className="h-primary"> SignIn Form </h1>
           <form onSubmit={handleSubmit}>
 
             <label className="label"> Email or Username: </label>
@@ -115,7 +115,7 @@ const Login = () => {
 
             <Link to="/forgot-password" className='links'> Forgot Password? </Link>
 
-            <button className="btn-login"> Sign In </button>
+            <button className="btn-login"> SignIn </button>
 
           </form>
 
@@ -123,7 +123,7 @@ const Login = () => {
             
           </div>
 
-          <h4 className="text"> Don't have an account? <Link to='/signup' className='links'> Sign Up </Link> </h4>
+          <h4 className="text"> Don't have an account? <Link to='/signup' className='links'> SignUp </Link> </h4>
           <h4> <Link to='/' className='links'> Home </Link> </h4>
         </div>
       </div>

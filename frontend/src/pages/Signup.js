@@ -141,7 +141,7 @@ const Signup = () => {
 		
 		<div className="container">
 			<div className="signup-box">
-				<h1 className="h-primary"> Signup Form </h1>
+				<h1 className="h-primary"> SignUp Form </h1>
 
 				<form onSubmit={handleSubmit}>
 
@@ -199,11 +199,11 @@ const Signup = () => {
 					</div>
 					<div className="password-error"> {errors.captcha} </div>
 
-					<button className="btn-signup"> Signup </button>
+					<button className="btn-signup"> SignUp </button>
 
 				</form>
 
-				<h4 className="text"> Already have an account? <Link to='/login' className='links'> Sign In </Link> </h4>
+				<h4 className="text"> Already have an account? <Link to='/login' className='links'> SignIn </Link> </h4>
 				<h4> <Link to='/' className='links'> Home </Link> </h4>
 
 			</div>
