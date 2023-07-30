@@ -559,6 +559,7 @@ footer {
 
 #strength-password-div{
     display: flex;
+    justify-content: space-between;
 }
 
 .strength-password {
@@ -584,7 +585,4 @@ footer {
 #root > div > div > div.login-box > h4{
     margin-top: 25px;
     margin-bottom: 0px;
-}
-#root > div > div > div > form > div:nth-child(8){
-    margin-bottom: 2px;
 }
