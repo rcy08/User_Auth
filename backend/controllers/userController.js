@@ -8,36 +8,36 @@ const handleError = (err) => {
     console.log(err.message, err.code);
     let errors = { email: '', password: '' };
 
-    if(err.message === 'Please verify your email first') {
+    if (err.message === 'Please verify your email first') {
         errors.password = err.message;
         return errors;
     }
 
-    if(err.message === 'Please fill all fields') {
+    if (err.message === 'Please fill all fields') {
         errors.password = err.message;
         return errors;
     }
 
-    if(err.message === 'Email not registered') {
+    if (err.message === 'Email not registered') {
         errors.email = err.message;
         return errors;
     }
-    if(err.message === 'You are registered with us but not this way. Try another way of signing in.') {
+    if (err.message === 'You are registered with us but not this way. Try another way of signing in.') {
         errors.password = err.message;
         return errors;
     }
 
-    if(err.message === 'Incorrect Password') {
+    if (err.message === 'Incorrect Password') {
         errors.password = err.message;
         return errors;
     }
-    
-    if(err.code === 11000) {
+
+    if (err.code === 11000) {
         errors.email = 'Email/Username already registered';
         return errors;
     }
 
-    if(err.message.includes('user validation failed')) {
+    if (err.message.includes('user validation failed')) {
         Object.values(err.errors).forEach(({ properties }) => {
             errors[properties.path] = properties.message;
         });
@@ -46,7 +46,7 @@ const handleError = (err) => {
 }
 
 const createToken = (id) => {
-    return jwt.sign({ id }, process.env.JWT_SECRET, {expiresIn: process.env.JWT_EXPIRE});
+    return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRE });
 }
 
 const signup = async (req, res) => {
@@ -56,26 +56,30 @@ const signup = async (req, res) => {
 
         const usernameAlreadyExists = await User.findOne({ name });
 
-        if(usernameAlreadyExists) {
-            return res.status(500).json({ errors: {
-                username: 'Username already exists'
-            }});
+        if (usernameAlreadyExists) {
+            return res.status(500).json({
+                errors: {
+                    username: 'Username already exists'
+                }
+            });
         }
 
         const secretKey = process.env.RECAPTCHA_SECRET_KEY;
 
         const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-          method: 'POST',
-          headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
-          body: `secret=${secretKey}&response=${recaptchaResponse}`,
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `secret=${secretKey}&response=${recaptchaResponse}`,
         });
 
         const captchaData = await response.json();
 
-        if(!captchaData.success){
-            return res.status(500).json({ errors: {
-                captcha: 'captcha verification failed'
-            } });
+        if (!captchaData.success) {
+            return res.status(500).json({
+                errors: {
+                    captcha: 'captcha verification failed'
+                }
+            });
         }
 
         const user = await User.create({ name, email, password });
@@ -84,16 +88,17 @@ const signup = async (req, res) => {
 
         await user.save();
 
-        const verificationUrl = `https://user-auth-csv.netlify.app/email-verification/${verificationToken}`;
+        const verificationUrl = `https://blueknova.netlify.app/email-verification/${verificationToken}`;
 
         const message = `
-           <h1> Please go to this link to verify your Email </h1>
+           <h1> Hey ${name}!, Thanks for registering with us. <h1>
+           <h2> Please go to this link to verify your Email </h2>
            <a href=${verificationUrl} clicktracking=off> ${verificationUrl} </a>
         `
 
         try {
             sendEmail({
-                to: user.email,
+                to: email,
                 subject: 'Email Verification',
                 text: message
             });
@@ -119,17 +124,17 @@ const signup = async (req, res) => {
 }
 
 const emailverification = async (req, res) => {
-    
+
     const emailVerificationToken = crypto.createHash('sha256').update(req.params.token).digest('hex');
 
     try {
         const user = await User.findOne({
-          emailVerificationToken,
-          emailVerificationExpire: { $gt: Date.now() }
+            emailVerificationToken,
+            emailVerificationExpire: { $gt: Date.now() }
         });
 
         if (!user) {
-          res.status(400).json({ error: 'Invalid email verification token' });
+            res.status(400).json({ error: 'Invalid email verification token' });
         }
 
         user.isVerified = true;
@@ -139,8 +144,8 @@ const emailverification = async (req, res) => {
         await user.save();
 
         res.status(201).json({
-          success: true,
-          data: 'Email Verification Successful',
+            success: true,
+            data: 'Email Verification Successful',
         });
 
     } catch (error) {
@@ -160,7 +165,7 @@ const login = async (req, res) => {
 
         var dateWithTime = new Date().toLocaleString().replace(",", "");
         user.logs.push(dateWithTime);
-        console.log(dateWithTime);  
+        console.log(dateWithTime);
 
         await user.save();
 
@@ -178,7 +183,7 @@ const forgotpassword = async (req, res) => {
     try {
         const user = await User.findOne({ email });
 
-        if(!user) {
+        if (!user) {
             return res.status(400).json({ error: 'User does not exist' });
         }
 
@@ -186,7 +191,7 @@ const forgotpassword = async (req, res) => {
 
         await user.save();
 
-        const resetUrl = `https://user-auth-csv.netlify.app/reset-password/${resetToken}`;
+        const resetUrl = `https://blueknova.netlify.app/reset-password/${resetToken}`;
 
         const message = `
           <h1> Hello, ${user.name} </h1>
@@ -202,7 +207,7 @@ const forgotpassword = async (req, res) => {
                 text: message
             });
 
-            res.status(200).json({ success: true, data: 'Email Sent'  });
+            res.status(200).json({ success: true, data: 'Email Sent' });
 
         } catch (error) {
             console.log(error);
@@ -212,7 +217,7 @@ const forgotpassword = async (req, res) => {
 
             await user.save();
 
-            return res.status(500).json({ error : 'Email could not be sent' });
+            return res.status(500).json({ error: 'Email could not be sent' });
         }
     }
     catch (error) {
@@ -227,12 +232,12 @@ const resetpassword = async (req, res) => {
     try {
 
         const user = await User.findOne({
-          resetPasswordToken,
-          resetPasswordExpire: { $gt: Date.now() }
+            resetPasswordToken,
+            resetPasswordExpire: { $gt: Date.now() }
         });
 
         if (!user) {
-          return res.status(400).json({ error: 'Invalid reset token' });
+            return res.status(400).json({ error: 'Invalid reset token' });
         }
 
         user.password = req.body.password;
@@ -242,9 +247,9 @@ const resetpassword = async (req, res) => {
         await user.save();
 
         res.status(201).json({
-          success: true,
-          data: 'Password Reset Success',
-          token: createToken(user._id)
+            success: true,
+            data: 'Password Reset Success',
+            token: createToken(user._id)
         });
 
     } catch (error) {
@@ -253,7 +258,7 @@ const resetpassword = async (req, res) => {
 }
 
 const getuserdetails = async (req, res) => {
-    
+
     const user = req.user;
 
     res.status(200).json({
@@ -277,7 +282,7 @@ const deleteaccount = async (req, res) => {
     } catch (error) {
 
         res.status(404).json({ error: 'User not found' });
-        
+
     }
 }
 
