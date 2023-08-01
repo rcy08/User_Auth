@@ -146,7 +146,6 @@ body::before {
     /* background-image: linear-gradient(-180deg, rgb(0,104,74), #75a603); */
     /* box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px; */
     color: #FFFFFF;
-    font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
     overflow: hidden;
     pointer-events: auto;
     position: relative;
@@ -174,7 +173,7 @@ body::before {
     /* box-shadow: 1px 1px 1px rgb(54, 54, 106); */
     /* box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px; */
     color: rgb(255, 255, 255);
-    background-color: rgb(0, 89, 63);
+    background-color: rgb(0, 55, 39);
     border-color: rgb(0, 89, 63);
     box-shadow: rgb(192, 250, 230) 0px 0px 0px 3px;
 }
@@ -184,7 +183,6 @@ body::before {
     /* background-image: linear-gradient(-180deg, rgb(0,104,74), #75a603); */
     /* box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px; */
     color: #FFFFFF;
-    font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
     overflow: hidden;
     pointer-events: auto;
     position: relative;
@@ -211,9 +209,9 @@ body::before {
     /* box-shadow: 1px 1px 1px rgb(54, 54, 106); */
     /* box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px; */
     color: rgb(255, 255, 255);
-    background-color: rgb(200, 19, 55);
-    border-color: rgb(0, 89, 63);
-    box-shadow: rgb(192, 250, 230) 0px 0px 0px 3px;
+    background-color: rgb(166, 17, 47);
+    border-color: rgb(159, 16, 44);
+    box-shadow: rgb(250, 192, 192) 0px 0px 0px 3px;
 }
 
 .btn-signup {
