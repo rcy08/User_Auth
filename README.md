@@ -20,7 +20,7 @@
 
 * Then start the react server with npm run start
 
-* You are good to go! Navigate the website now. Thanks for trying out our project.
+* You are good to go! Navigate the website now. Thanks for trying out our project m,
 
 ### `Contributors:`
 
