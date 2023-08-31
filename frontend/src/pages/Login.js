@@ -16,7 +16,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
 
-      const response = await fetch('https://user-auth-fyxk.onrender.com/login', {
+      const response = await fetch('https://blueknova-server.cyclic.app/login', {
           method: 'POST',
           headers: { 'Content-Type' : 'application/json' },
           body: JSON.stringify({ email, password })
@@ -61,7 +61,7 @@ const Login = () => {
     const name = userObject.name;
     const picture = userObject.picture;
 
-    await fetch('https://user-auth-fyxk.onrender.com/google-accounts', {
+    await fetch('https://blueknova-server.cyclic.app/google-accounts', {
       method: 'POST',
       headers: { 'Content-Type' : 'application/json' },
       body: JSON.stringify({ email, name, picture })
